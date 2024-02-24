@@ -25,6 +25,7 @@ def minPartitions(n: str) -> list[list]:
     total_list = [[int(''.join(map(str, sublist)))] for sublist in total_list]
     return total_list
 
+
 print(minPartitions(n))
 print(minPartitions(n2))
 print(minPartitions(n3))
@@ -58,11 +59,12 @@ def decode(encoded: list[int], first: int) -> list[int]:
         decode.append(decode[ind] ^ num)
     return decode
 
+
 print(decode(encoded1, first1))
 print(decode(encoded2, first2))
 
 
-"""You are given an integer n, the number of teams in a tournament that has strange rules:
+"""3) You are given an integer n, the number of teams in a tournament that has strange rules:
 
 If the current number of teams is even, each team gets paired with another team. A total of n / 2 matches are played, and n / 2 teams advance to the next round.
 If the current number of teams is odd, one team randomly advances in the tournament, and the rest gets paired. A total of (n - 1) / 2 matches are played, and (n - 1) / 2 + 1 teams advance to the next round.
@@ -91,5 +93,32 @@ def numberOfMatches(n: int) -> int:
             n = ((n // 2) + 1)
     return sum(list_)
 
+
 print(numberOfMatches(n))
 print(numberOfMatches(n2))
+
+
+"""4) Given an integer x, return true if x is a 
+palindrome, and false otherwise.
+Example 1:
+Input: x = 121
+Output: true
+Explanation: 121 reads as 121 from left to right and from right to left.
+
+Example 2:
+Input: x = -121
+Output: false
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome."""
+
+x = -121
+x2 = 121
+
+def isPalindrome(x: int) -> bool:
+    str_ = str(x)
+    if str_ == str_[::-1]:
+        return True
+    return False
+
+
+print(isPalindrome(x))
+print(isPalindrome(x2))
